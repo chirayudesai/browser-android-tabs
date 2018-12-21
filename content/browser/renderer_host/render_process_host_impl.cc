@@ -2985,10 +2985,7 @@ void RenderProcessHostImpl::AppendRendererCommandLine(
 }
 
 bool RenderProcessHostImpl::NeedPlayVideoInBackground() const {
-  bool play_video_in_background_enabled = HostContentSettingsMapFactory::GetForProfile(
-      ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
-      GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_PLAY_VIDEO_IN_BACKGROUND, NULL) == CONTENT_SETTING_ALLOW;
-  return play_video_in_background_enabled;
+  return false;
 }
 
 void RenderProcessHostImpl::PropagateBrowserCommandLineToRenderer(

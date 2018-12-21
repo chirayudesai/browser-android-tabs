@@ -80,8 +80,6 @@
 #include "content/public/common/content_features.h"
 #include "content/public/common/url_utils.h"
 #include "chrome/browser/content_settings/host_content_settings_map_factory.h"
-#include "chrome/browser/profiles/profile.h"
-#include "chrome/browser/profiles/profile_manager.h"
 #include "media/base/mime_util.h"
 #include "net/base/escape.h"
 #include "skia/ext/platform_canvas.h"
@@ -133,10 +131,7 @@ void ConfigureEntriesForRestore(
 
 // Gets the global settings value for Desktop Mode
 bool IsGlobalDesktopSettingsOn() {
-  bool is_desktop_settings_on = HostContentSettingsMapFactory::GetForProfile(
-    ProfileManager::GetActiveUserProfile()->GetOriginalProfile())->
-    GetDefaultContentSetting(CONTENT_SETTINGS_TYPE_DESKTOP_VIEW, NULL) == CONTENT_SETTING_ALLOW;
-  return is_desktop_settings_on;
+  return false;
 }
 
 // Determines whether or not we should be carrying over a user agent override
