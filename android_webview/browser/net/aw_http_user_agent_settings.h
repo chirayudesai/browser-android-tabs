@@ -24,7 +24,7 @@ class AwHttpUserAgentSettings : public net::HttpUserAgentSettings {
 
   // net::HttpUserAgentSettings implementation
   std::string GetAcceptLanguage() const override;
-  std::string GetUserAgent() const override;
+  std::string GetUserAgent(const std::string& strHost) const override;
 
  private:
   // Avoid re-processing by caching the last value from the locale and the

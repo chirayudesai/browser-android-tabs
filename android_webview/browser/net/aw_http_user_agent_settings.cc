@@ -31,9 +31,9 @@ std::string AwHttpUserAgentSettings::GetAcceptLanguage() const {
   return last_http_accept_language_;
 }
 
-std::string AwHttpUserAgentSettings::GetUserAgent() const {
+std::string AwHttpUserAgentSettings::GetUserAgent(const std::string& strHost) const {
   DCHECK_CURRENTLY_ON(content::BrowserThread::IO);
-  return android_webview::GetUserAgent();
+  return android_webview::GetUserAgent(strHost);
 }
 
 }  // namespace android_webview
